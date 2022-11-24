@@ -30,6 +30,15 @@ title: Not So Scary Graveyard
             Quest
             2.</p>
     </section>
+    <section class="hiscore" id="hiscore">
+        <h2 class="hiscore__title">Hiscore</h2>
+        {{ hiscores | log }}
+        {% for item in hiscores.scores | limitscores(10) %}
+        <ul>
+            <li>{{ item.name }}: {{ item.score }}</li>
+        </ul>
+        {% endfor %}
+    </section>
 </main>
 
 <footer class="container">
