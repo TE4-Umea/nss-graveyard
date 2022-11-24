@@ -1,4 +1,93 @@
-body {
-  font-family: sans-serif;
-  background-color: #f9f9f9;
+@use 'utils';
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+
+@font-face {
+    font-family: 'IM Fell English SC';
+    font-style: normal;
+    font-weight: 400;
+    src: local('IM Fell English SC Regular'), local('IMFellEnglishSC-Regular'),
+        url('/assets/fonts/IMFellEnglishSC-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.333,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+    --step--2: clamp(0.63rem, calc(0.58rem + 0.29vw), 0.8rem);
+    --step--1: clamp(0.84rem, calc(0.79rem + 0.27vw), 1rem);
+    --step-0: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+    --step-1: clamp(1.5rem, calc(1.48rem + 0.11vw), 1.56rem);
+    --step-2: clamp(1.95rem, calc(2.01rem + -0.08vw), 2rem);
+    --step-3: clamp(2.44rem, calc(2.74rem + -0.39vw), 2.66rem);
+    --step-4: clamp(3.05rem, calc(3.73rem + -0.87vw), 3.55rem);
+    --step-5: clamp(3.82rem, calc(5.06rem + -1.6vw), 4.74rem);
+}
+
+.container {
+    width: min(80ch, 100vw - var(--step-4));
+    margin-inline: auto;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: var(--step--2) var(--step-0);
+
+    ul {
+        display: flex;
+        gap: var(--step-0);
+        list-style: none;
+    }
+}
+
+.hero {
+    display: grid;
+    grid-template-areas: 'stack';
+
+    > * {
+        grid-area: stack;
+    }
+
+    &__inner {
+        display: grid;
+        place-content: center;
+    }
+
+    &__title {
+        color: #efefef;
+        place-self: center;
+        font-family: 'IM Fell English SC', serif;
+        font-size: var(--step-5);
+    }
+}
+
+.filter {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.flow > * + * {
+    margin-top: var(--flow-space, 1rem);
+}
+
+.btn {
+    text-align: center;
+    text-decoration: none;
+    padding: var(--step--2);
+    color: #efefef;
+    background-color: red;
+    border: 1px solid transparent;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    &:hover {
+        background-color: orange;
+    }
+    &--rounded {
+        border-radius: 25%;
+    }
 }

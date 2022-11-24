@@ -4,22 +4,32 @@ title: Not So Scary Graveyard
 ---
 
 <header class="hero">
-    <h1 class="hero__title">Not So Scary Graveyard</h1>
-    <p class="hero__tagline">A Halloween-themed VR game for you!</p>
-    <a href="#play" class="btn btn__hero">Play</a>
+    {% image "./src/assets/images/screen-front.png", "Graveyard", "hero__image" %}
+    <div class="hero__inner">
+        <h1 class="hero__title">Not So Scary Graveyard</h1>
+        <p class="hero__tagline">A Halloween-themed VR game for you!</p>
+        <a href="#play" class="btn btn--rounded btn__hero">Play</a>
+    </div>
 </header>
 
-<section class="about">
-    <h2 class="about__title">About</h2>
-    <p class="about__text">Not So Scary Graveyard is a Halloween-themed VR game for you! It's a first-person shooter
-        game where you have to shoot the zombies that are coming at you. You can also shoot the pumpkins to get points.
-        The game is made with Unity and the assets are from the Unity Asset Store. The game is made for the Oculus Quest
-        2.</p>
-</section>
+<main class="container">
 
-<section class="play" id="play">
-    <h2 class="play__title">Play</h2>
-    <p class="play__text">You can play the game on the Oculus Quest 2. You can download the game from the Oculus Store
-        <a href="https://www.oculus.com/experiences/quest/4638173601094998/" target="_blank" rel="noopener noreferrer">here</a>.
-    </p>
-</section>
+    <section class="about">
+        <h2 class="about__title">About</h2>
+        <p class="about__text">Not So Scary Graveyard is a Halloween-themed VR game for you! It's a first-person shooter
+            game where you have to shoot the zombies that are coming at you. You can also shoot the pumpkins to get
+            points.
+            The game is made with Unity and the assets are from the Unity Asset Store. The game is made for the Oculus
+            Quest
+            2.</p>
+    </section>
+
+    <section class="play" id="play">
+        <h2 class="play__title">Play</h2>
+        <p class="play__text">You can play the game on the Oculus Quest 2. You can download the game from the Oculus
+            Store
+            <a href="https://www.oculus.com/experiences/quest/4638173601094998/" target="_blank"
+                rel="noopener noreferrer">here</a>.
+        </p>
+    </section>
+</main>
