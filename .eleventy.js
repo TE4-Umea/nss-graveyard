@@ -29,6 +29,11 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addLiquidShortcode('image', imageShortcode);
     eleventyConfig.addJavaScriptFunction('image', imageShortcode);
 
+    eleventyConfig.addFilter('limitscores', function(data, entries = 10) {
+        // get num entries from array
+        return data.slice(0, entries);
+    })
+
     return {
         dir: {
         input: 'src',
