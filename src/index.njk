@@ -12,13 +12,19 @@ title: Not So Scary Graveyard
     </div>
 </header>
 
-<main class="container">
+<main class="container flow">
     <section class="play" id="play">
         <h2 class="play__title">Play</h2>
         <p class="play__text">You can play the game on the Oculus Quest 2. You can download the game from the Oculus
             Store
             <a href="https://www.oculus.com/experiences/quest/4638173601094998/" target="_blank"
             rel="noopener noreferrer">here</a>.
+        </p>
+    </section>
+    <section class="feedback" id="feedback">
+        <h2 class="play__title">Give feedback</h2>
+        <p class="play__text">After having played the game feel free to give us feedback on the game. You can do this by filling out the form linked here 
+            <a href="https://forms.gle/8Z5Z9Z1Z1Z1Z1Z1Z9" target="_blank">Form</a>.
         </p>
     </section>
     <section class="about" id="about">
@@ -33,16 +39,18 @@ title: Not So Scary Graveyard
     <section class="hiscore" id="hiscore">
         <h2 class="hiscore__title">Hiscore</h2>
         {{ hiscores | log }}
-        {% for item in hiscores.scores | limitscores(10) %}
         <ul>
-            <li>{{ item.name }}: {{ item.score }}</li>
-        </ul>
+        {% for item in hiscores.scores | limitscores(10) %}
+            <li>{{ item.name }} had a score of: "{{ item.score }}" </li>
+            {% else %}
+            <li>No scores yet!</li>
         {% endfor %}
+        </ul>
     </section>
 </main>
 
 <footer class="container">
-    <p>Made with ❤️ by....</p>
+    <p>Made by Te4</p>
     <p>&copy; 2022</p>
 
 </footer>
