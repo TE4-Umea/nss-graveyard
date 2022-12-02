@@ -38,12 +38,20 @@ body {
     color: var(--color-fg);
     background-color: var(--color-bg);
 }
+
 h1,h2,h3{
     font-family: 'IM Fell English SC', serif;
 }
 .container {
     width: min(80ch, 100vw - var(--step-4));
     margin-inline: auto;
+    a{
+        color: var(--color-fg);
+        text-decoration: underline;
+        &:hover{
+            color: var(--color-secondary);
+    }
+}
 }
 
 .navbar {
@@ -58,11 +66,11 @@ h1,h2,h3{
     background-color: var(--color-bg);
 
     li{
-        background-color: var(--color-secondary);
+        background-color: var(--color-primary);
         padding: 0.5rem;
         border-radius: 0.5rem;
         &:hover {
-            background-color: var(--color-primary);
+            background-color: var(--color-secondary);
         }
     }
 
@@ -79,8 +87,9 @@ h1,h2,h3{
 }
 .brand{
     font-size: var(--step-2);
+    //font-family: 'IM Fell English SC', serif;
     font-weight: bold;
-    border-bottom: var(--color-fg) 0.2rem solid;
+    text-decoration: underline;
 }
 
 .hero {
@@ -88,6 +97,16 @@ h1,h2,h3{
     grid-template-areas: 'stack';
 
     margin-bottom: var(--step-1);
+
+    h1 {
+        font-size: var(--step-5);
+        font-family: 'IM Fell English SC', serif;
+    }
+
+    p {
+        font-size: var(--step-2);
+        font-family: 'IM Fell English SC', serif;
+    }
 
     > * {
         grid-area: stack;
@@ -119,10 +138,13 @@ h1,h2,h3{
 .btn {
     text-align: center;
     text-decoration: none;
+    font-size: var(--step-4);
+    font-family: 'IM Fell English SC', serif;
     padding: var(--step--2);
     color: var(--color-fg);
     background-color: var(--color-bg);
     border: 1px solid transparent;
+
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
         border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     &:hover {
